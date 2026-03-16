@@ -11,21 +11,21 @@ app.secret_key = 'your-secret-key-change-this'
 
 # Database configuration - UPDATE THESE VALUES
 DB_CONFIG = {
-    'host': 'ntc353.encs.concordia.ca',
-    'port': 3306,
-    'database': 'ntc353_1'
+    'host': '',
+    'port': ,
+    'database': ''
 }
 
-# Fixed Web login credentials
+# Fixed Web login credentials - UPDATE
 FIXED_LOGIN = {
     'username': 'ntc353_1',
     'password': 'Draty@01'
 }
 
-# MySQL credentials for database connection
+# MySQL credentials for database connection - UPDATE
 MYSQL_CREDENTIALS = {
-    'user': 'ntc353_1',
-    'password': 'Draty@01'
+    'user': '',
+    'password': ''
 }
 
 
