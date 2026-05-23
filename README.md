@@ -10,8 +10,6 @@ The app can be opened from the hosted Streamlit website:
 
 ## Screenshots
 
-Add screenshots in a folder named `screenshots/` and update the paths if needed.
-
 ### E/R Diagram
 
 ![Diagram](screenshots/ER-Diagram.png)
