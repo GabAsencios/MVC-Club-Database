@@ -42,7 +42,7 @@ MVC Club Manager is a Streamlit + MySQL web application for managing a volleybal
 - SQL triggers for database-level business rules.
 - Credentials kept outside the code using `.env` locally or Streamlit secrets online.
 
-## Technologies Used
+## Tech Stack
 
 | Part | Technology |
 |---|---|
