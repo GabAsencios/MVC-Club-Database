@@ -14,6 +14,10 @@ Replace the link above with the final Streamlit Community Cloud URL after deploy
 
 Add screenshots in a folder named `screenshots/` and update the paths if needed.
 
+### E/R Diagram
+
+![Diagram](screenshots/E/R-Diagram.png)
+
 ### Dashboard
 
 ![Dashboard](screenshots/dashboard.png)
