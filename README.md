@@ -4,7 +4,6 @@ MVC Club Manager is a Streamlit + MySQL web application for managing a volleybal
 
 ## Live Website
 
-The app can be opened from the hosted Streamlit website:
 
 [Open MVC Club Manager](https://volleyball-database-gui.streamlit.app/)
 
