@@ -8,8 +8,6 @@ The app can be opened from the hosted Streamlit website:
 
 [Open MVC Club Manager](https://volleyball-database-gui.streamlit.app/)
 
-Replace the link above with the final Streamlit Community Cloud URL after deployment.
-
 ## Screenshots
 
 Add screenshots in a folder named `screenshots/` and update the paths if needed.
