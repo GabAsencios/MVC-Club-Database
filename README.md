@@ -282,10 +282,3 @@ The schema follows BCNF because determinants are represented as keys in the inte
 
 Some fields, such as current member payment status or current location, are included for GUI convenience, while detailed history is still preserved in the related transaction and history tables.
 
-## Security Notes
-
-- Do not commit `.env`, `ca.pem`, or real credentials.
-- Use Streamlit secrets for the hosted version.
-- Use environment variables locally.
-- Use demo data instead of real personal data.
-- Rotate credentials immediately if they are ever pushed to GitHub.
