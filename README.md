@@ -16,7 +16,7 @@ Add screenshots in a folder named `screenshots/` and update the paths if needed.
 
 ### E/R Diagram
 
-![Diagram](screenshots/E/R-Diagram.png)
+![Diagram](screenshots/ER-Diagram.png)
 
 ### Dashboard
 
