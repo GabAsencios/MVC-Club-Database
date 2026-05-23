@@ -54,6 +54,80 @@ MVC Club Manager is a Streamlit + MySQL web application for managing a volleybal
 | Environment variables | python-dotenv |
 | Database script | script.sql |
 
+## How to Use the App
+
+Use the sidebar to move between pages:
+
+- Dashboard: view summary metrics and charts.
+- Members: manage club members and payment status.
+- Personnel: manage coaches, administrators, captains, and volunteers.
+- Teams: manage teams, coaches, locations, and rosters.
+- Sessions & Formations: manage training sessions, games, formations, and scores.
+- Payments: record and view member payments.
+- Locations: manage club locations.
+- Family Members: view family contacts and minor relationships.
+- Email Log: view and create email log records.
+
+## SQL Script Summary
+
+The single `script.sql` file includes:
+
+- Table creation for the relational schema.
+- Sample insert statements.
+- Triggers for business-rule enforcement.
+- Queries for CRUD operations, joins, reports, aggregations, validations, and email logs.
+
+## Table Summary
+
+The database is organized around these main groups:
+
+- Person records: shared personal information for members, personnel, and family contacts.
+- Club members: member-specific details, payment status, hobbies, location history, and team history.
+- Personnel: coaches, captains, administrators, mandates, and location assignments.
+- Teams and sessions: teams, formations, games, training sessions, players, positions, and scores.
+- Locations: head office and branch information.
+- Payments: membership payment transactions.
+- Family relationships: family contacts and minor-family relationships.
+- Email logs: records of generated or stored communication history.
+
+## Trigger Summary
+
+The trigger section enforces rules such as:
+
+- Preventing invalid or duplicate formation assignments.
+- Preventing overlapping active team memberships.
+- Enforcing age-related constraints.
+- Checking location capacity rules.
+- Maintaining database consistency during inserts or updates.
+
+## Query Summary
+
+The query section demonstrates:
+
+- Basic CRUD operations.
+- Search and filtering.
+- Join-based reports.
+- Grouping and aggregation.
+- Payment summaries.
+- Team and formation reports.
+- Member participation reports.
+- Trigger validation tests.
+
+## Normalization Summary
+
+The schema is designed to satisfy 3NF and BCNF based on the intended functional dependencies.
+
+### 3NF
+
+The schema avoids transitive dependencies by separating information into focused tables. For example, shared personal data is stored in `Person`, while role-specific information is stored in `ClubMember`, `Personnel`, and `FamilyMember`. Many-to-many relationships are handled through separate relationship tables instead of repeating groups in entity tables.
+
+### BCNF
+
+The schema follows BCNF because determinants are represented as keys in the intended design. Entity tables use primary keys, subtype tables reuse the `Person` identifier, lookup tables store repeated values, and relationship/history tables use keys that identify the full relationship they represent.
+
+Some fields, such as current member payment status or current location, are included for GUI convenience, while detailed history is still preserved in the related transaction and history tables.
+
+
 ## Project Structure
 
 ```text
@@ -208,76 +282,4 @@ Open the local URL:
 http://localhost:8501
 ```
 
-## How to Use the App
-
-Use the sidebar to move between pages:
-
-- Dashboard: view summary metrics and charts.
-- Members: manage club members and payment status.
-- Personnel: manage coaches, administrators, captains, and volunteers.
-- Teams: manage teams, coaches, locations, and rosters.
-- Sessions & Formations: manage training sessions, games, formations, and scores.
-- Payments: record and view member payments.
-- Locations: manage club locations.
-- Family Members: view family contacts and minor relationships.
-- Email Log: view and create email log records.
-
-## SQL Script Summary
-
-The single `script.sql` file includes:
-
-- Table creation for the relational schema.
-- Sample insert statements.
-- Triggers for business-rule enforcement.
-- Queries for CRUD operations, joins, reports, aggregations, validations, and email logs.
-
-## Table Summary
-
-The database is organized around these main groups:
-
-- Person records: shared personal information for members, personnel, and family contacts.
-- Club members: member-specific details, payment status, hobbies, location history, and team history.
-- Personnel: coaches, captains, administrators, mandates, and location assignments.
-- Teams and sessions: teams, formations, games, training sessions, players, positions, and scores.
-- Locations: head office and branch information.
-- Payments: membership payment transactions.
-- Family relationships: family contacts and minor-family relationships.
-- Email logs: records of generated or stored communication history.
-
-## Trigger Summary
-
-The trigger section enforces rules such as:
-
-- Preventing invalid or duplicate formation assignments.
-- Preventing overlapping active team memberships.
-- Enforcing age-related constraints.
-- Checking location capacity rules.
-- Maintaining database consistency during inserts or updates.
-
-## Query Summary
-
-The query section demonstrates:
-
-- Basic CRUD operations.
-- Search and filtering.
-- Join-based reports.
-- Grouping and aggregation.
-- Payment summaries.
-- Team and formation reports.
-- Member participation reports.
-- Trigger validation tests.
-
-## Normalization Summary
-
-The schema is designed to satisfy 3NF and BCNF based on the intended functional dependencies.
-
-### 3NF
-
-The schema avoids transitive dependencies by separating information into focused tables. For example, shared personal data is stored in `Person`, while role-specific information is stored in `ClubMember`, `Personnel`, and `FamilyMember`. Many-to-many relationships are handled through separate relationship tables instead of repeating groups in entity tables.
-
-### BCNF
-
-The schema follows BCNF because determinants are represented as keys in the intended design. Entity tables use primary keys, subtype tables reuse the `Person` identifier, lookup tables store repeated values, and relationship/history tables use keys that identify the full relationship they represent.
-
-Some fields, such as current member payment status or current location, are included for GUI convenience, while detailed history is still preserved in the related transaction and history tables.
 
