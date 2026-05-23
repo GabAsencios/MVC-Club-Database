@@ -15,6 +15,26 @@ Note: If the app has been inactive, Streamlit may show a sleeping page. Click "Y
 
 ![Diagram](screenshots/ER-Diagram.png)
 
+### Dashboard
+
+![Dashboard](screenshots/dashboard.png)
+
+### Members Page
+
+![Members Page](screenshots/members.png)
+
+### Teams Page
+
+![Teams Page](screenshots/teams.png)
+
+### Payments Page
+
+![Payments Page](screenshots/payments.png)
+
+### Database Reports / Queries
+
+![Reports Page](screenshots/reports.png)
+
 ## Main Features
 
 - Dashboard with club statistics and charts.
