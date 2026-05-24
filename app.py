@@ -9,6 +9,7 @@ import plotly.express as px
 import tempfile
 import os
 from dotenv import load_dotenv
+from mysql.connector import pooling
 
 # ── Config ──────────────────────────────────────────────────────────────────
 st.set_page_config(page_title="MVC Club Manager", layout="wide", page_icon="🏐")
@@ -55,13 +56,22 @@ if ssl_ca_path:
     })
 
 # ── DB helpers ───────────────────────────────────────────────────────────────
+@st.cache_resource
+def get_pool():
+    return pooling.MySQLConnectionPool(
+        pool_name="mvc_pool",
+        pool_size=5,
+        pool_reset_session=True,
+        **DB_CONFIG
+    )
+
 @contextmanager
 def get_conn():
-    conn = mysql.connector.connect(**DB_CONFIG)
+    conn = get_pool().get_connection()
     try:
         yield conn
     finally:
-        conn.close()
+        conn.close()  # returns connection to pool, not full disconnect
 
 def query_df(sql, params=None):
     with get_conn() as conn:
