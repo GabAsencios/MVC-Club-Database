@@ -8,7 +8,6 @@ MVC Club Manager is a Streamlit + MySQL web application for managing a volleybal
 [Open MVC Club Manager](https://mvc-club-database.streamlit.app/)
 
 Test Credentials:
-
 -Username: admin
 -Password: password123
 
