@@ -129,11 +129,7 @@ Database_GUI/
 |-- .gitignore
 |-- README.md
 |-- screenshots/
-    |-- dashboard.png
-    |-- members.png
-    |-- teams.png
-    |-- payments.png
-    |-- reports.png
+    |-- E/R Diagram.png
 ```
 
 Files that should not be committed to GitHub:
